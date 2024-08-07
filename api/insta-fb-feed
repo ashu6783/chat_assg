@@ -1,0 +1,79 @@
+# To create an Instagram or Facebook-like content feed that meets your requirements, you’ll need several operations 
+# (or APIs) to handle user interactions and data retrieval. Here’s a breakdown of the necessary APIs 
+# and their functionalities:
+
+# 1. User Authentication and Authorization
+
+# Register User: Create a new user account.
+# Login User: Authenticate user credentials and provide a token for session management.
+# Logout User: Invalidate the user’s session token.
+
+
+# 2. Friend Management
+# Send Friend Request: Allow users to send friend requests.
+# Accept/Reject Friend Request: Allow users to accept or reject friend requests.
+# Get Friends List: Retrieve a list of friends for a user.
+
+
+# 3. Post Management
+# Create Post: Allow users to create new posts.
+# Get User Posts: Retrieve posts created by a specific user.
+# Get Friends’ Posts: Retrieve posts created by a user’s friends.
+
+
+# 4. Comment Management
+# Create Comment: Allow users to comment on posts.
+# Get Post Comments: Retrieve comments for a specific post.
+
+
+# 5. Feed Generation
+# Get User Feed: Retrieve the feed for a user based on the specified requirements.
+
+# -----------EXAMPLE ENDPOINTS------------/
+
+
+
+User Authentication and Authorization
+
+POST /api/register
+POST /api/login
+POST /api/logout
+
+Friend Management
+
+POST /api/friends/request
+POST /api/friends/accept
+POST /api/friends/reject
+GET /api/friends
+
+Post Management
+
+POST /api/posts
+GET /api/posts/user/:userId
+GET /api/posts/friends
+
+Comment Management
+
+POST /api/comments
+GET /api/comments/post/:postId
+
+Feed Generation
+
+GET /api/feed
+
+# ------------------FEED GENERATION LOGIC---------------------
+
+
+# Retrieve Friends Posts:
+
+# Query the posts collection to get posts created by the user’s friends.
+
+# Retrieve Posts with Friends’ Comments:
+# Query the comments collection to find posts where the user’s friends have commented.
+# Ensure these posts are included in the feed.
+
+# Combine and Sort:
+# Combine the results from the above queries.
+# Sort the combined results by creation date or any other relevant criteria.
+
+
